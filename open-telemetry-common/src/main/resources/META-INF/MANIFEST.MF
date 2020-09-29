@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: opentelemetry-sdk-metrics
+Target-Compatibility: 1.8
+Automatic-Module-Name: io.opentelemetry.sdk.metrics
+Implementation-Version: 0.9.0-SNAPSHOT
+Built-By: circleci
+Source-Compatibility: 1.8
+Built-JDK: 1.8.0_131
+
