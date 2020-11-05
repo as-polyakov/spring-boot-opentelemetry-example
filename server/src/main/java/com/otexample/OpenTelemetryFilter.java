@@ -1,8 +1,10 @@
 package com.otexample;
 
-import com.otexample.metrics.EventManagerImpl;
-import io.grpc.Context;
+import com.atlassian.obsvs.event.EventManagerImpl;
+import com.atlassian.obsvs.event.ObsvsEventCallerMetadata;
+import com.atlassian.obsvs.event.ObsvsEventInput;
 import io.opentelemetry.OpenTelemetry;
+import io.opentelemetry.context.Context;
 import io.opentelemetry.context.Scope;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -27,7 +29,13 @@ public class OpenTelemetryFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         Context c = OpenTelemetry.getPropagators().getTextMapPropagator().extract(Context.current(), ((HttpServletRequest) servletRequest), HttpServletRequest::getHeader);
 
-        try (Scope ss = EventManagerImpl.getInstance().startEventWithParent("myevent", "apo", "123", c)) {
+
+        try (Scope ignored = EventManagerImpl.getInstance().startEvent(ObsvsEventInput.builder()
+                .spanBuilder(OpenTelemetry.getTracer("example").spanBuilder("serverEvent"))
+                .eventCallerMetadata(ObsvsEventCallerMetadata.builder()
+                        .tenantId("tt")
+                        .eventName("server-event")
+                        .build()).build())) {
             filterChain.doFilter(servletRequest, servletResponse);
         }
     }

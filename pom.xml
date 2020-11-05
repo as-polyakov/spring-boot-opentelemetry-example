@@ -28,6 +28,10 @@
             <id>oss.sonatype.org-snapshot</id>
             <url>https://oss.jfrog.org/artifactory/oss-snapshot-local</url>
         </repository>
+        <repository>
+            <id>parallelstream-github</id>
+            <url>https://maven.pkg.github.com/parallelstream/opentelemetry-java</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -40,31 +44,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <version>${spring-boot-starter-web.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.8.1</version>
-        </dependency>
-        <dependency>
-            <groupId>io.opentelemetry</groupId>
-            <artifactId>opentelemetry-api</artifactId>
-            <version>${opentelemetry.modified.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.opentelemetry</groupId>
-            <artifactId>opentelemetry-sdk</artifactId>
-            <version>${opentelemetry.modified.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.opentelemetry</groupId>
-            <artifactId>opentelemetry-exporters-logging</artifactId>
-            <version>${opentelemetry.modified.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.opentelemetry</groupId>
-            <artifactId>opentelemetry-exporters-jaeger</artifactId>
-            <version>${opentelemetry.version}</version>
         </dependency>
         <dependency>
             <groupId>io.grpc</groupId>
@@ -90,6 +69,18 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>28.2-android</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.auto.value</groupId>
+            <artifactId>auto-value-annotations</artifactId>
+            <version>1.7</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.google.auto.value</groupId>
+            <artifactId>auto-value</artifactId>
+            <version>1.7</version>
+            <optional>true</optional>
         </dependency>
 
     </dependencies>

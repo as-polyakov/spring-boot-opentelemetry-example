@@ -16,7 +16,7 @@
         <dependency>
             <groupId>com.atlassian.observasaurus.spring-boot-opentelemetry-example</groupId>
             <artifactId>open-telemetry-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${project.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

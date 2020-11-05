@@ -3,8 +3,10 @@ package com.otexample;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.opentelemetry.OpenTelemetry;
+/*
 import io.opentelemetry.exporters.jaeger.JaegerGrpcSpanExporter;
 import io.opentelemetry.exporters.logging.LoggingMetricExporter;
+*/
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.export.IntervalMetricReader;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
@@ -17,7 +19,7 @@ import java.util.Collections;
 @Component
 public class OpenTelemetryConfigurer {
 
-
+/*
     private String ip = "192.168.99.101";
     private int port = 14250;
 
@@ -56,4 +58,5 @@ public class OpenTelemetryConfigurer {
         OpenTelemetrySdk.getTracerProvider().shutdown();
         intervalMetricReader.shutdown();
     }
+    */
 }

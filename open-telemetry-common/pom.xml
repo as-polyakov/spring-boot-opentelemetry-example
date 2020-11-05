@@ -12,19 +12,12 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <dependencies>
-
-
         <dependency>
-            <groupId>com.google.auto.value</groupId>
-            <artifactId>auto-value</artifactId>
-            <version>${auto-value.version}</version>
+            <groupId>com.atlassian.observability</groupId>
+            <artifactId>obsvs-client-core</artifactId>
+            <version>0.1.0</version>
+            <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>com.google.auto.value</groupId>
-            <artifactId>auto-value-annotations</artifactId>
-            <version>${auto-value.version}</version>
-        </dependency>
-
     </dependencies>
 
 </project>
